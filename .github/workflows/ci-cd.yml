@@ -10,6 +10,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: app  # Set default working directory
+
     services:
       mongo:
         image: mongo
@@ -26,8 +30,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: app
 
-      - name: Run build
+      - name: Build the app
         run: npm run build
-        working-directory: app
