@@ -1,0 +1,45 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    services:
+      mongo:
+        image: mongo
+        ports: ['27017:27017']
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Root Dependencies
+        run: npm install
+        working-directory: .
+
+      - name: Install Client Dependencies
+        run: npm install
+        working-directory: apps/client
+
+      - name: Install Server Dependencies
+        run: npm install
+        working-directory: apps/server
+
+      - name: Run Client Build
+        run: npm run build
+        working-directory: apps/client
+
+
+      # - name: Docker Compose Build
+      #   run: docker-compose -f infra/docker-compose.yml up --build -d
