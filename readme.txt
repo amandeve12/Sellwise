@@ -1,21 +1,9 @@
-# Freelance Platform Monorepo
+# ![Gumroad Logo](https://upload.wikimedia.org/wikipedia/commons/6/65/Gumroad_logo.svg)
 
-This monorepo contains all microservices and frontend for a freelance platform (similar to Upwork).
+### Sell your stuff. See what sticks.
 
-## Structure
+**Sellwise** is an e-commerce platform inspired by Gumroad, enabling creators to sell their products directly to consumers.
 
-- `apps/frontend`: Next.js frontend
-- `services/auth-service`: Authentication
-- `services/job-service`: Job management
-- `services/payment-service`: Payment logic
-- `shared/`: Shared TypeScript types and utilities
-- `infra/`: Docker, database, and infrastructure files
+This repository contains the source code for the **Sellwise** web application — built with the MERN stack (MongoDB, Express, React, Node.js), with CI/CD integration.
 
-## Getting Started
-
-```bash
-# Install all deps
-npm install
-
-# Start full stack
-docker-compose up --build
+---

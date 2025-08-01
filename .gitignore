@@ -28,9 +28,9 @@ docker-compose.override.yml
 .idea/
 
 # React
-apps/client/.next/
-apps/client/out/
-apps/client/build/
+apps/.next/
+apps/out/
+apps/build/
 
 # Server
 apps/server/dist/
