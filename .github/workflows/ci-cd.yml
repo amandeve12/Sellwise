@@ -10,6 +10,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: app  # Set default working directory
+
     services:
       mongo:
         image: mongo
@@ -24,22 +28,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Root Dependencies
+      - name: Install dependencies
         run: npm install
-        working-directory: .
 
-      - name: Install Client Dependencies
-        run: npm install
-        working-directory: apps/client
-
-      - name: Install Server Dependencies
-        run: npm install
-        working-directory: apps/server
-
-      - name: Run Client Build
+      - name: Build the app
         run: npm run build
-        working-directory: apps/client
-
-
-      # - name: Docker Compose Build
-      #   run: docker-compose -f infra/docker-compose.yml up --build -d
