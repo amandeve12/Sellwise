@@ -1,36 +1,12 @@
-# Node.js
+# Next.js build artifacts
+app/.next/
+app/out/
+app/node_modules/
+
+# Backend build (if any)
+Services/node_modules/
+Services/dist/
+
+# Global
 node_modules/
-npm-debug.log*
-
-# Logs
-logs
-*.log
-*.out
-
-# Build output
-dist/
-build/
-
-# Environment files
 .env
-.env.*.local
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Docker
-*.local
-docker-compose.override.yml
-
-# VSCode
-.vscode/
-.idea/
-
-# React
-apps/.next/
-apps/out/
-apps/build/
-
-# Server
-apps/server/dist/
