@@ -24,9 +24,10 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Root Dependencies
-        run: npm install
-        working-directory: .
+      # ❌ Remove this — you don’t have a root package.json
+      # - name: Install Root Dependencies
+      #   run: npm install
+      #   working-directory: .
 
       - name: Install Frontend (Next.js) Dependencies
         run: npm install
@@ -39,12 +40,3 @@ jobs:
       - name: Build Frontend
         run: npm run build
         working-directory: app
-
-      # Optional: Run backend tests if available
-      # - name: Run Backend Tests
-      #   run: npm test
-      #   working-directory: Services
-
-      # Optional: Docker Compose
-      # - name: Docker Compose Build
-      #   run: docker-compose -f infra/docker-compose.yml up --build -d
