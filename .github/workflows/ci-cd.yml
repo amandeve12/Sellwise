@@ -24,19 +24,10 @@ jobs:
         with:
           node-version: 18
 
-      # ❌ Remove this — you don’t have a root package.json
-      # - name: Install Root Dependencies
-      #   run: npm install
-      #   working-directory: .
-
-      - name: Install Frontend (Next.js) Dependencies
+      - name: Install dependencies
         run: npm install
         working-directory: app
 
-      - name: Install Backend (Node.js) Dependencies
-        run: npm install
-        working-directory: Services
-
-      - name: Build Frontend
+      - name: Run build
         run: npm run build
         working-directory: app
